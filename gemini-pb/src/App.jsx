@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Imagen from './pages/imagen.jsx'
 import './App.css'
 
 function App() {
+  const [prompt, setPrompt] = useState("");
 
   return (
     <div className= "main-container">
@@ -11,9 +11,14 @@ function App() {
         <h3>Imagen Photo Booth</h3>
         </div>
         <div className="body">
-          
+          <input
+            type="text"
+            placeholder="Enter your prompt here"
+            value ={prompt}
+            onChange = {(e) => setPrompt(e.target.value)}
+            />
+          <Imagen prompt ={prompt} />
         </div>
-
         </div>
 
 
